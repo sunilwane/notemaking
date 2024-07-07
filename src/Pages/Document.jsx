@@ -27,7 +27,7 @@ export default function Document() {
   const [pdfUrls, setPdfUrls] = useState([]);
   const [pdfs, setPdfs] = useState([]);
   const token = JSON.parse(localStorage.getItem("tokenno"));
-  console.log(token);
+ 
   // useEffect(() => {
   //   const fetchPdfs = async () => {
   //     try {

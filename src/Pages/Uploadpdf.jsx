@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 export default function Uploadpdf() {
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState("");
@@ -38,8 +39,14 @@ export default function Uploadpdf() {
         }
       );
       console.log("message");
-      alert(response.data);
-      navigate("/document   ");
+      Swal.fire({
+        title: "Success!",
+        text: `New pdf Added`,
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+      
+      navigate("/document");
     } catch (error) {
       console.error("Error uploading file:", error);
       alert("Error uploading file");

@@ -14,9 +14,9 @@ export default function Signup() {
 
     setUserData({ ...userdata, [name]: value });
   };
-
+  const url = "https://benelli.netlify.app";
   const handlesbt = () => {
-    fetch("http://localhost:8083/user/register", {
+    fetch(`${url}/user/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

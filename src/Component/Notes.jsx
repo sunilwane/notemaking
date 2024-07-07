@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import VIewDetails from "../Pages/VIewDetails";
-
+import "../App.css";
 export default function Notes() {
   const tokenvalue = JSON.parse(localStorage.getItem("tokenno"));
   const [notesdata, setNotesData] = useState([]);
@@ -53,7 +53,7 @@ export default function Notes() {
     <>
       {/* <Navbar /> */}
       {view ? (
-        <VIewDetails tempdata={temp} />
+        <VIewDetails tempdata={temp} viewdata={handlepage} />
       ) : (
         <>
           <h1 style={{ marginTop: "5%" }}> Story</h1>
@@ -77,10 +77,24 @@ export default function Notes() {
                 {/* <h4> Body: {curr.body}</h4> */}
                 <h4> category :{curr.category}</h4>
                 <div style={{ marginRight: "70%", padding: "5px" }}>
-                  <button onClick={() => handlepage(curr)}>Read More</button>
+                  <button
+                    onClick={() => handlepage(curr)}
+                    className="redmore"
+                    style={{
+                      backgroundColor: "green",
+                      color: "#fff",
+                      height: "45px",
+                    }}
+                  >
+                    Read More
+                  </button>
                   <button
                     onClick={() => handledelete(curr._id)}
-                    style={{ marginLeft: "10px" }}
+                    style={{
+                      color: "#fff",
+                      height: "45px",
+                      marginLeft: "10px",
+                    }}
                   >
                     Delete
                   </button>

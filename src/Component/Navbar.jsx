@@ -28,7 +28,9 @@ export default function Navbar() {
   return (
     <div>
       <nav>
-        <h4 style={{ color: "#303030", padding: "10px" }}>E-Locker System</h4>
+        <h4 style={{ color: "#303030", padding: "10px" }}>
+          E-Document Locker System
+        </h4>
 
         <ul>
           <li>

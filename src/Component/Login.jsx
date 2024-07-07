@@ -16,7 +16,7 @@ export default function Login() {
   };
 
   const handlesubmit = () => {
-    fetch("http://localhost:8083/user/login", {
+    fetch("/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
